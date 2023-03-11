@@ -1,136 +1,253 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
 }
 
 /* this is from 0px to 768px (trying my best) */
-body{
-    background-color:hsl(204, 43%, 93%);
+
+body {
+   background-color: hsl(204, 43%, 93%);
+   font-family: "Karla", sans-serif;
+   /* font-size: 16px; */
 }
 
-main{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;    
-    max-width: 100vh;
+main {
+   /* min-height: 80vh; */
+   max-width: 38%;
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 3px 6px 32px 0 rgba(0, 0, 0, 0.116);
+   border-radius: 7px;
 }
 
-.article{
-    width: 80%;
+.article {
+   /* width: 80%; */
+   display: grid;
+   grid-template-columns: 1fr;
 }
 
-h1{
-    padding: 1rem;
-    font-size: 20px;
-    color: white;
-    white-space: nowrap;
+/* h1 {
+   padding: 1rem;
+   font-size: 20px;
+   color: white;
+   white-space: nowrap;
+} */
 
+h2 {
+   font-weight: 700;
 }
 
-h2{
-    padding: 0.5rem 1rem 0 1rem;
-    color: hsl(71, 73%, 54%);
+.card-one {
+   background-color: #fff;
+   grid-column: 1/-1;
+   border-top-right-radius: 7px;
+   border-top-left-radius: 7px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+
+   padding: 3.2rem;
 }
 
-.card-one{
-    background-color: #fff;
-}
-.card-one p{
-    padding: 1rem;
-    color: hsl(218, 22%, 67%);
-    font-weight: 400;
-    line-height: 1.8;
+.card-one h1 {
+   color: hsl(179, 62%, 43%);
+   font-size: 2rem;
+   padding-bottom: 1rem;
+   font-weight: 700;
 }
 
-.card-one h1{
-    color: hsl(179, 62%, 43%);
-    margin-top: 2rem;
+.card-one h2 {
+   font-weight: 700;
+   color: hsl(71, 73%, 54%);
 }
 
-.card-two{
-    background-color: hsl(179, 62%, 43%)
+.card-one p {
+   /* padding: 1rem; */
+   color: hsl(218, 22%, 67%);
+   font-weight: 400;
+   line-height: 1.8;
+
+   /* width: 96%; */
+   font-size: 1.3rem;
 }
 
-
-
-
-.card-two h1{
-    padding-bottom: 1rem;
-}
-.card-two .price{
-    display: flex;
-    align-items: center;
-
+.card-columns {
+   grid-column: 1/-1;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
 }
 
-.card-two .price .month{
-    color:hsl(217, 66%, 86%);
-    padding: 0.5rem;
-    margin-bottom: 0
-}
-.card-two .price .dollar{
-    font-size: 20px;
-    color: white;
-    font-weight: 700;
-    margin-bottom: 0;
-}
-.card-two p{
-    color: white;
-    margin-bottom: 1rem;
-    padding: 0 0 0 1.5rem;
+.card-two {
+   background-color: hsl(179, 62%, 43%);
+   border-bottom-left-radius: 7px;
+
+   padding: 3.2rem;
+
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
 }
 
-
-.btn{
-    background-color: hsl(71, 73%, 54%);
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 0.75rem 0; 
-    color: white;
-    margin: 0 auto;
-    white-space: nowrap;
-    border-radius: 0.5rem;
-    width: 90%;
-    max-width: 300px;
-    box-shadow: inset;
+.card-two h2 {
+   /* padding-bottom: 1rem; */
+   color: hsl(204, 43%, 93%);
+   font-weight: 400;
+   padding-bottom: 4px;
+}
+.card-two .price {
+   display: flex;
+   align-items: center;
+   gap: 10px;
 }
 
-.btn-background{
-    padding-bottom: 1.5rem;
+.price .month {
+   color: hsla(217, 66%, 86%, 0.534);
+   font-size: 1.2rem;
+   font-weight: 400;
+   /* padding: 0.5rem; */
+   /* margin-bottom: 0; */
+}
+.price .dollar {
+   font-size: 2.6rem;
+   color: rgb(255, 255, 255);
+   font-weight: 700;
+   /* margin-bottom: 0; */
+}
+.card-two p {
+   color: rgba(255, 255, 255, 0.747);
+   font-size: 1.2rem;
+   /* margin-bottom: 7px; */
+   /* padding: 0 0 0 1.5rem; */
 }
 
-.card-three{
-    background-color: hsl(179, 55%, 47%);
+.btn-background p {
+   margin-bottom: 3rem;
 }
 
-.card-three p{
-    color: white;
-    font-size: 13px;
-    padding: 0 0 1rem 1rem; 
-    line-height: 1.3
+.btn {
+   background-color: hsl(71, 73%, 54%);
+   text-decoration: none;
+   display: inline-block;
+   text-align: center;
+   width: 18.5rem;
+   height: 4rem;
+   /* padding: 12px 72px; */
+   color: white;
+   /* margin: 0 auto; */
+   /* white-space: nowrap; */
+   border-radius: 5px;
+   /* width: 90%; */
+   /* max-width: 300px; */
+   /* box-shadow: inset; */
+   font-size: 1.3rem;
+   padding-top: 12px;
+
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.192);
 }
 
+/* 
+.btn-background {
+   padding-bottom: 1.5rem;
+} */
 
+.card-three {
+   background-color: rgba(54, 186, 184, 0.918);
+   border-bottom-right-radius: 7px;
 
-@media(min-width: 800px){
-    .card-columns{
-        display: flex;
-        min-width: 100%;
-
-    }
-    .card-two{
-        width: 50%;
-    }
-    .card.card-three{
-        width: 100%
-    }
-    .card-one p{
-        padding-right: 5rem;
-    }
+   padding: 3.2rem;
 }
 
+.card-three h2 {
+   color: hsl(204, 43%, 93%);
+   padding-bottom: 2rem;
+}
 
+.card-three p {
+   /* width: 85%; */
+   color: rgba(229, 239, 245, 0.692);
 
+   font-size: 1.2rem;
+   font-weight: 400;
+   /* padding: 0 0 1rem 1rem; */
+   line-height: 1.4;
+}
+
+/* @media (min-width: 800px) {
+   .card-columns {
+      display: flex;
+      min-width: 100%;
+   }
+   .card-two {
+      width: 50%;
+   }
+   .card.card-three {
+      width: 100%;
+   }
+   .card-one p {
+      padding-right: 5rem;
+   }
+} */
+
+@media (max-width: 75em) {
+   html {
+      font-size: 56.25%;
+   }
+}
+
+@media (max-width: 68em) {
+   html {
+      font-size: 72.5%;
+   }
+
+   main {
+      max-width: 32%;
+   }
+
+   .card-columns {
+      grid-template-columns: 1fr;
+   }
+
+   .card-two {
+      border-bottom-left-radius: 0;
+   }
+
+   .card-three {
+      border-bottom-left-radius: 7px;
+   }
+}
+
+@media (max-width: 56em) {
+   html {
+      font-size: 68%;
+   }
+   main {
+      max-width: 68%;
+   }
+}
+
+@media (max-width: 39em) {
+   html {
+      font-size: 62%;
+   }
+}
+
+@media (max-width: 24em) {
+   html {
+      font-size: 36%;
+   }
+
+   .btn {
+      padding-top: 6px;
+   }
+}
